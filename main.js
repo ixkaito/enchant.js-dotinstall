@@ -57,9 +57,13 @@ window.onload = function() {
         this.fram = rand(5);
         this.opacity = rand(100) / 100;
         this.image = core.assets['chara1.png'];
-        this.on('enterframe', function() {
-          this.rotate(rand(10));
-        });
+
+        this.tl.moveBy(rand(100), 0, 40, enchant.Easing.BOUNCE_EASEOUT)
+               .moveBy(-rand(100), -rand(20), rand(20))
+               .fadeOut(20)
+               .fadeIn(10)
+               .loop();
+
         core.rootScene.addChild(this);
       }
     });
