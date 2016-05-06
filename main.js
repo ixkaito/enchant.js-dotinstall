@@ -24,7 +24,9 @@ window.onload = function() {
       }
 
       if (this.within(enemy, 10)) {
-        label.text = 'HIT!';
+        // label.text = 'HIT!';
+        core.pushScene(gameOverScene);
+        core.stop();
       }
     });
 
@@ -39,6 +41,9 @@ window.onload = function() {
     label.y = 5;
     label.color = 'red';
     label.font = '14px "Arial"';
+
+    var gameOverScene = new Scene();
+    gameOverScene.backgroundColor = 'black';
 
     core.rootScene.addChild(bear);
     core.rootScene.addChild(enemy);
